@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
+
 import Logo from "../assets/LogoMarvel.png";
 import "../styles/header.css";
+import Hero from "./Hero";
 
 const Header = () => {
   return (
@@ -7,20 +10,12 @@ const Header = () => {
       <div className="container ">
         <div className="header-bloc">
           <div>
-            <img src={Logo} alt="logo Marvel" />
-            {/* <input type="search" placeholder="Recherche" /> */}
+            <Link to="/">
+              <img src={Logo} alt="logo Marvel" />
+            </Link>
           </div>
 
-          <div>
-            <div className="header-button">
-              <button>Personnages</button>
-              <button>Comics</button>
-              <button>Favoris</button>
-
-              <button>Se connecter</button>
-              <button>S'inscrire</button>
-            </div>
-          </div>
+          <Hero />
         </div>
       </div>
     </header>
