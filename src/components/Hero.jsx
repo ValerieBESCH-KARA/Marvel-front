@@ -10,10 +10,10 @@ const Hero = () => {
       <div>
         <Link to="/characters">Personnages</Link>
         <Link to="/comics">Comics</Link>
-        <button>Favoris</button>
+        <Link to="/favoris">Favoris</Link>
 
         <button>Se connecter</button>
-        <button>S'inscrire</button>
+        <Link to="/signup">S'inscrire</Link>
         <div>
           <input
             className="search"

@@ -8,6 +8,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ComicsPage from "./Pages/ComicsPage";
 import CharactersCommicsPage from "./Pages/CharactersComicsPage";
+import FavorisPage from "./Pages/FavorisPage";
+import SignupPage from "./Pages/SignupPage";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/characters" element={<CharactersPage />} />
         <Route path="/comics" element={<ComicsPage />} />
         <Route path="/characterComics" element={<CharactersCommicsPage />} />
+        <Route path="/favoris" element={<FavorisPage />} />
+        <Route path="/signup" element={<SignupPage />} />
       </Routes>
       <Footer />
     </Router>

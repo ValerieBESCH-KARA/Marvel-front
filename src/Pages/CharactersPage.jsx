@@ -38,10 +38,11 @@ const CharactersPage = () => {
           {data.results.map((character) => {
             return (
               <div>
-                <article key={character._id}>
+                <div key={character._id}>
                   <Link
-                    to="/characterComics"
+                    to="/charactersComicsPage"
                     element={<CharactersCommicsPage />}
+                    className="form-character"
                   >
                     <img
                       src={
@@ -56,7 +57,7 @@ const CharactersPage = () => {
 
                     <p>{character.description}</p>
                   </Link>
-                </article>
+                </div>
               </div>
             );
           })}
