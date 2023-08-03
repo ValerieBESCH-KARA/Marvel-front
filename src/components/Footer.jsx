@@ -8,8 +8,10 @@ const Footer = () => {
         <a href="https://lereacteur.io/">
           <span> Le Reacteur </span>
         </a>
-        by <a href="https://github.com/ValerieBESCH-KARA"></a>
-        <span>Valérie BESCH-KARA</span>
+        by
+        <a href="https://github.com/ValerieBESCH-KARA">
+          <span>Valérie BESCH-KARA</span>
+        </a>
       </p>
     </footer>
   );
