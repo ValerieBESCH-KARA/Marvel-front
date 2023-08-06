@@ -7,7 +7,6 @@ import "./styles/App.css";
 import HomePage from "./Pages/HomePage";
 import CharactersPage from "./Pages/CharactersPage";
 import ComicsPage from "./Pages/ComicsPage";
-import CharactersCommicsPage from "./Pages/CharactersComicsPage";
 import FavorisPage from "./Pages/FavorisPage";
 import SignupPage from "./Pages/SignupPage";
 import LoginPage from "./Pages/LoginPage";
