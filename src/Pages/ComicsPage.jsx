@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+import "../styles/comicsPage.css";
+
 const ComicsPage = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -24,22 +26,28 @@ const ComicsPage = () => {
   return isLoading ? (
     <div>Loading ...</div>
   ) : (
-    <div>
-      {data.results.map((comic) => {
-        return (
-          <main className="comics">
-            <article key={comic._id}>
-              <img
-                src={comic.thumbnail.path + "." + comic.thumbnail.extension}
-                alt="comic"
-              />
-              <h2>{comic.title}</h2>
-              <p>{comic.description}</p>
-            </article>
-          </main>
-        );
-      })}
-    </div>
+    <main>
+      <div className="container comics">
+        {data.results.map((comic) => {
+          return (
+            <div>
+              <div className="comics-bloc">
+                <div key={comic._id}>
+                  <img
+                    src={comic.thumbnail.path + "." + comic.thumbnail.extension}
+                    alt="comic"
+                  />
+                </div>
+
+                <h2>{comic.title}</h2>
+
+                <p>{comic.description}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </main>
   );
 };
 

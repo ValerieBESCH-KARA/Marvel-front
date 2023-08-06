@@ -1,0 +1,60 @@
+.signup-page {
+  min-height: 450px;
+  height: calc(100vh - 250px);
+}
+
+.signup-bloc {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 275px;
+}
+
+h1 {
+  font-size: 30px;
+  margin: 30px 0;
+}
+
+.signup-bloc form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-bloc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.signup-bloc input {
+  margin: 30px 0;
+  border-style: none;
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 250px;
+}
+
+.signup-bloc input::placeholder {
+  font-size: 17px;
+  color: rgb(183, 180, 180);
+}
+
+.signup-bloc button {
+  margin-bottom: 10px;
+  width: inherit;
+  height: 35px;
+  border-radius: 5px;
+  border: 2px solid black;
+  font-size: 16px;
+  background-color: rgb(240, 223, 30);
+}
+
+.signup-bloc form :last-child {
+  display: flex;
+  justify-content: center;
+}

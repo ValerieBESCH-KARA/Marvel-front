@@ -3,10 +3,13 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import axios from "axios";
 
-const SignupPage = ({ setToken }) => {
+import "../styles/SignupPage.css";
+
+const SignupPage = ({ token, setToken }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
@@ -14,20 +17,24 @@ const SignupPage = ({ setToken }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!email || !username || !password) {
-      setErrorMessage("Veuillez remplir tous les champs !");
+    if (!email || !username || !password || !confirmPassword) {
+      return setErrorMessage("Veuillez remplir tous les champs !");
     } else {
       try {
-        const { data } = await axios.post(
-          "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        const response = await axios.post(
+          "https://site--marvel-backend--4j598vz4fhlc.code.run/signup",
           {
             email,
             username,
             password,
-            newsletter,
+            confirmPassword,
           }
         );
-        console.log("data signup>>>", data);
+
+        console.log("data signup>>>", response.data);
+
+        const token = response.data.token;
+        console.log("token signupPage>>>", token);
 
         Cookies.set("token", data.token);
         setToken(data.token);
@@ -40,53 +47,85 @@ const SignupPage = ({ setToken }) => {
   };
 
   return (
-    <main>
+    <main className="signup-page">
       <div className="container signup-bloc">
-        <h1>S'inscrire</h1>
+        <h1>Sign up !</h1>
 
         <form onSubmit={handleSubmit}>
-          <input
-            className="form-bloc"
-            type="text"
-            name="username"
-            id="username"
-            placeholder="Nom d'utilisateur"
-            value={username}
-            onChange={(event) => {
-              setErrorMessage("");
-              setUsername(event.target.value);
-            }}
-          />
+          <div className="form-bloc">
+            <label htmlFor="username">Nom : </label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Username"
+              value={username}
+              onChange={(event) => {
+                setErrorMessage("");
+                setUsername(event.target.value);
+              }}
+            />
+          </div>
 
-          <input
-            className="form-bloc"
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Email"
-            value={email}
-            onChange={(event) => {
-              setErrorMessage("");
-              setEmail(event.target.value);
-            }}
-          />
+          <div className="form-bloc">
+            <label htmlFor="email"> Email : </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              value={email}
+              onChange={(event) => {
+                setErrorMessage("");
+                setEmail(event.target.value);
+              }}
+            />
+          </div>
 
-          <input
-            className="form-bloc"
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Mot de passe"
-            value={password}
-            onChange={(event) => {
-              setErrorMessage("");
-              setPassword(event.target.value);
-            }}
-          />
+          <div className="form-bloc">
+            <label htmlFor="password">Password :</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+              value={password}
+              onChange={(event) => {
+                setErrorMessage("");
+                setPassword(event.target.value);
+              }}
+            />
+          </div>
 
-          <button>S'inscrire</button>
+          <div className="form-bloc">
+            <label htmlFor="confirmPassword">Confirm password : </label>
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              placeholder="Confirm Password"
+              value={confirmPassword}
+              onChange={(event) => {
+                setErrorMessage("");
+                setConfirmPassword(event.target.value);
+              }}
+            />
+          </div>
+
+          <button>Login</button>
 
           {errorMessage && <p>{errorMessage}</p>}
+
+          <div>
+            <span
+              className="connect-here"
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              Already have an account? Click here to login!
+            </span>
+          </div>
         </form>
       </div>
     </main>

@@ -3,3 +3,11 @@ hero > div {
   align-items: center;
   justify-content: space-between;
 }
+
+hero a {
+  font-size: 25px;
+}
+
+.search {
+  border-radius: 5px;
+}

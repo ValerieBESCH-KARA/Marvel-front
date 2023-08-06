@@ -1,9 +1,32 @@
-.form-character {
+.Characters {
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.form-character img {
+.characters-bloc {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+  margin: 20px 0;
+}
+
+.characters-bloc img {
   height: 300px;
-  width: 300px;
+  width: 250px;
   object-fit: cover;
+  border: 2px black solid;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.characters-bloc h2 {
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.characters-bloc p {
+  width: 250px;
 }

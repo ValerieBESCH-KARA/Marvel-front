@@ -36,13 +36,15 @@ const CharactersPage = () => {
       <main>
         <div className="container Characters">
           {data.results.map((character) => {
+            // const [characterId, setCharacterId] = useState("");
             return (
-              <div>
+              <div className="characters-bloc">
                 <div key={character._id}>
                   <Link
-                    to="/charactersComicsPage"
-                    element={<CharactersCommicsPage />}
-                    className="form-character"
+                    to="/characterComics"
+                    element={
+                      <CharactersCommicsPage characterId={character._id} />
+                    }
                   >
                     <img
                       src={
@@ -50,13 +52,13 @@ const CharactersPage = () => {
                         "." +
                         character.thumbnail.extension
                       }
-                      alt=""
+                      alt="preview"
                     />
-
-                    <h2> {character.name}</h2>
-
-                    <p>{character.description}</p>
                   </Link>
+
+                  <h2> {character.name}</h2>
+
+                  <p>{character.description}</p>
                 </div>
               </div>
             );

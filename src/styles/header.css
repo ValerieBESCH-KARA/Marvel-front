@@ -21,9 +21,3 @@ header img {
   height: 90px;
   margin-top: 4px;
 }
-
-.header-button {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}

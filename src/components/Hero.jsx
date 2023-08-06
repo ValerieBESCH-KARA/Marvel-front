@@ -12,14 +12,15 @@ const Hero = () => {
         <Link to="/comics">Comics</Link>
         <Link to="/favoris">Favoris</Link>
 
-        <button>Se connecter</button>
+        <Link to="/login">Se connecter</Link>
         <Link to="/signup">S'inscrire</Link>
+
         <div>
           <input
             className="search"
             value={search}
             type="text"
-            placeholder="Entre le nom de ton Personnage / Comics "
+            placeholder={"Recherche"}
             onChange={(event) => {
               setSearch(event.target.value);
             }}

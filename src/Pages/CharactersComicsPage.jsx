@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const CharactersCommicsPage = () => {
+const CharactersCommicsPage = (characterId) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
