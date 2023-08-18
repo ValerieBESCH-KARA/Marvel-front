@@ -34,7 +34,6 @@ const CharactersPage = () => {
       <main>
         <div className="container Characters">
           {data.results.map((character) => {
-            // const [characterId, setCharacterId] = useState("");
             return (
               <div className="characters-bloc">
                 <div key={character._id}>

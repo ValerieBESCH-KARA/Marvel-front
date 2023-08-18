@@ -10,12 +10,13 @@ import ComicsPage from "./Pages/ComicsPage";
 import FavorisPage from "./Pages/FavorisPage";
 import SignupPage from "./Pages/SignupPage";
 import LoginPage from "./Pages/LoginPage";
+import NotFoundPage from "./Pages/NotFoundPage";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 function App() {
-  const [token, setToken] = useState(Cookies.get("token") || "");
+  const [token, setToken] = useState(Cookies.get("token"));
 
   return (
     <Router>
@@ -30,6 +31,7 @@ function App() {
           element={<SignupPage token={token} setToken={setToken} />}
         />
         <Route path="/login" element={<LoginPage setToken={setToken} />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </Router>

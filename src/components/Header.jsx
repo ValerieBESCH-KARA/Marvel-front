@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-
 import Logo from "../assets/LogoMarvel.png";
-import "../styles/header.css";
 import Hero from "./Hero";
+
+import "../styles/header.css";
 
 const Header = () => {
   return (
