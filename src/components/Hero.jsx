@@ -8,19 +8,19 @@ const Hero = () => {
   return (
     <hero>
       <div>
-        <Link to="/characters">Personnages</Link>
+        <Link to="/characters">Characters</Link>
         <Link to="/comics">Comics</Link>
         <Link to="/favoris">Favoris</Link>
 
-        <Link to="/login">Se connecter</Link>
-        <Link to="/signup">S'inscrire</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/signup">Sign up</Link>
 
         <div>
           <input
             className="search"
             value={search}
             type="text"
-            placeholder={"Recherche"}
+            placeholder={"Search"}
             onChange={(event) => {
               setSearch(event.target.value);
             }}

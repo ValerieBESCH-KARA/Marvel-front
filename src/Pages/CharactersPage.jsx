@@ -3,6 +3,7 @@ import "../styles/charactersPage.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import CharactersCommicsPage from "./CharactersComicsPage";
 
 const CharactersPage = () => {
   const [data, setData] = useState();

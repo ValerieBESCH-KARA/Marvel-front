@@ -11,6 +11,7 @@ import FavorisPage from "./Pages/FavorisPage";
 import SignupPage from "./Pages/SignupPage";
 import LoginPage from "./Pages/LoginPage";
 import NotFoundPage from "./Pages/NotFoundPage";
+import CharactersCommicsPage from "./Pages/CharactersComicsPage";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -25,6 +26,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/characters" element={<CharactersPage />} />
         <Route path="/comics" element={<ComicsPage />} />
+        <Route path="/characterComics" element={<CharactersCommicsPage />} />
         <Route path="/favoris" element={<FavorisPage />} />
         <Route
           path="/signup"
